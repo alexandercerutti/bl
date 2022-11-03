@@ -1,9 +1,8 @@
 import type { Duplex } from "readable-stream";
-import type {
-  BufferList,
-  BufferListConstructor,
-  BufferListAcceptedTypes,
-} from "./BufferList";
+
+import BufferList = require("./BufferList");
+import { BufferListAcceptedTypes } from "./BufferListAcceptedTypes";
+
 
 type BufferListStreamInit =
   | ((err: Error, buffer: Buffer) => void)
@@ -31,7 +30,7 @@ interface BufferListStreamConstructor {
    * issue with require/commonjs import and "export = " below.
    */
 
-  BufferList: BufferListConstructor;
+  BufferList;
   BufferListStream: BufferListStreamConstructor;
 }
 
@@ -83,5 +82,5 @@ interface BufferListStream extends Duplex, BufferList {
  * ```
  */
 
-declare const BLS: BufferListStreamConstructor;
-export = BLS;
+declare const BufferListStream: BufferListStreamConstructor;
+export = BufferListStream;

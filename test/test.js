@@ -841,7 +841,7 @@ tape('destroy no pipe', function (t) {
 
   bl.destroy()
 
-  t.equal(bl._bufs.length, 0)
+  t.equal(bl._bufs?.length, 0)
   t.equal(bl.length, 0)
 })
 
@@ -857,7 +857,7 @@ tape('destroy with error', function (t) {
     t.equal(_err, err)
   })
 
-  t.equal(bl._bufs.length, 0)
+  t.equal(bl._bufs?.length, 0)
   t.equal(bl.length, 0)
 })
 
@@ -871,7 +871,7 @@ tape('destroy with error', function (t) {
 
   bl.destroy()
 
-  t.equal(bl._bufs.length, 0)
+  t.equal(bl._bufs?.length, 0)
   t.equal(bl.length, 0)
 })
 
@@ -887,7 +887,7 @@ tape('destroy with error', function (t) {
   setTimeout(function () {
     bl.destroy()
     setTimeout(function () {
-      t.equal(bl._bufs.length, 0)
+      t.equal(bl._bufs?.length, 0)
       t.equal(bl.length, 0)
     }, 500)
   }, 500)
@@ -905,7 +905,7 @@ tape('destroy with error', function (t) {
   function onEnd () {
     bl.destroy()
 
-    t.equal(bl._bufs.length, 0)
+    t.equal(bl._bufs?.length, 0)
     t.equal(bl.length, 0)
   }
 })
@@ -927,12 +927,12 @@ tape('destroy with error', function (t) {
     setTimeout(function () {
       bl.destroy()
 
-      t.equals(bl._bufs.length, 0)
+      t.equals(bl._bufs?.length, 0)
       t.equals(bl.length, 0)
 
       ds.destroy()
 
-      t.equals(bl._bufs.length, 0)
+      t.equals(bl._bufs?.length, 0)
       t.equals(bl.length, 0)
     }, 100)
   }
